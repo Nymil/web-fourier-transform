@@ -37,33 +37,89 @@ header nav li.selected {
     border-bottom: 0.2rem solid #9b59b6;
 }
 
-section#basic {
+section {
     text-align: center;
     margin: 2rem 0;
 }
 
-section#basic form {
-    margin: 1rem 0;
+form {
+    display: inline-flex;
+    align-items: center;
+    margin: 1rem 1rem;
+    background-color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 15rem;
+    justify-content: center;
 }
 
-section#basic form input[type="number"] {
+form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    box-sizing: border-box;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+form input[type="number"] {
     padding: 0.5rem;
     font-size: 1rem;
     border: 1px solid #fff;
     border-radius: 0.5rem;
     background-color: #1a1a1a;
     color: #fff;
-    margin-right: 0.5rem;
-}
-section#basic form label {
-    font-size: 1rem;
+    margin: 0 0.5rem;
+    width: 3rem;
+    text-align: center;
 }
 
-canvas#basic-fourier-canvas {
-    width: 1000px;
+form label {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+form select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #fff;
+    border-radius: 0.5rem;
+    background-color: #1a1a1a;
+    color: #fff;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1rem;
+    padding-right: 2rem;
+}
+
+form select option {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+canvas {
+    width: 1200px;
     height: 600px;
     border: 2px solid #fff;
     margin-top: 1rem;
     background-color: black;
     border-radius: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

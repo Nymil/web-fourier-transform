@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fourier transform yippee</title>
+    <title>Fourier series yippee</title>
 
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -13,15 +13,24 @@
 <body>
     <header>
         <nav>
-            <li class="selected">basic</li>
-            <li>image drawing</li>
+            <li id="basic-route" class="selected">basic</li>
+            <li id="image-drawing-route">image drawing</li>
         </nav>
     </header>
     <section id="basic">
-        <h1>Basic example of fourier transform</h1>
+        <h1>Basic example of fourier transform, making a square wave</h1>
         <form>
-            <input type="number" name="circle-count" id="circle-count" value="1">
+            <button type="button" id="decrease-circle-count">-</button>
+            <input type="number" name="circle-count" id="circle-count" value="2" step="1" readonly>
+            <button type="button" id="increase-circle-count">+</button>
             <label for="circle-count">amount of circles</label>
+        </form>
+        <form>
+            <select name="type-selection" id="type-selection">
+                <option value="square">square wave</option>
+                <option value="sawtooth">sawtooth wave</option>
+                <option value="triangle">triangle wave</option>
+            </select>
         </form>
         <canvas id="basic-fourier-canvas"></canvas>
     </section>

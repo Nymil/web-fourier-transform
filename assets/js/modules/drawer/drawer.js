@@ -7,8 +7,10 @@ function checkSetup() {
     }
 }
 
-function setCanvas($canvas) {
+function setCanvas($canvas, width, height) {
     _$canvas = $canvas;
+    _$canvas.width = width || 800;
+    _$canvas.height = height || 800;
     _ctx = $canvas.getContext("2d");
 }
 
@@ -45,7 +47,7 @@ function drawRect(color, rect, width = null) {
     _ctx.stroke();
 }
 
-function drawCircle(color, center, radius) {
+function drawCircle(color, center, radius, width = null) {
     checkSetup();
     if (center.length !== 2 || center.some(n => typeof n !== "number")) {
         throw new Error("center must be an array of 2 numbers");
@@ -54,8 +56,19 @@ function drawCircle(color, center, radius) {
     _ctx.beginPath();
     _ctx.strokeStyle = color;
     _ctx.fillStyle = color;
-    _ctx.arc(center[0], center[1], radius, 0, 2 * Math.PI);
-    _ctx.fill();
+
+    if (width !== null) {
+        _ctx.lineWidth = width;
+        _ctx.arc(center[0], center[1], radius - width / 2, 0, 2 * Math.PI);
+        _ctx.stroke();
+    } else {
+        _ctx.arc(center[0], center[1], radius, 0, 2 * Math.PI);
+        _ctx.fill();
+    }
 }
 
-export default { setCanvas, drawLine, drawRect, drawCircle };
+function clearCanvas() {
+    drawRect("black", [0, 0, _$canvas.width, _$canvas.height]);
+}
+
+export default { setCanvas, drawLine, drawRect, drawCircle, clearCanvas };
