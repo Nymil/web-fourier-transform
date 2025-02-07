@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fourier transform yippee</title>
+
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script text="text/javascript" src="./assets/js/index.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <li class="selected">basic</li>
+            <li>image drawing</li>
+        </nav>
+    </header>
+    <section id="basic">
+        <h1>Basic example of fourier transform</h1>
+        <form>
+            <input type="number" name="circle-count" id="circle-count" value="1">
+            <label for="circle-count">amount of circles</label>
+        </form>
+        <canvas id="basic-fourier-canvas"></canvas>
+    </section>
+    <section id="image-drawing" class="hidden">
+        <h1>Image drawing</h1>
+        <canvas id="image-drawing-canvas"></canvas>
+    </section>
+</body>
+</html>
