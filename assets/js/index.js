@@ -47,6 +47,8 @@ function setWaveTypeSelector() {
     select.addEventListener("change", () => {
         const selectedType = select.value;
         basicExample.setWaveType(selectedType);
+        document.querySelector("#circle-count").value = 2;
+        basicExample.setAmountOfCircles(2);
     });
 }
 

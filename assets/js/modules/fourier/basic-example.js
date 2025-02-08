@@ -31,9 +31,7 @@ function animateFrame() {
             const currentRadius = calculateCurrentRadius(startingCircleRadius, n);
             try {
                 drawer.drawCircle("#6e6e6e", [currentCenterCoords.x, currentCenterCoords.y], Math.abs(currentRadius), 1);
-            } catch (e) {
-                console.error(e);
-            }
+            } catch (e) {}
             const previousCenterCoords = { ...currentCenterCoords };
 
             currentCenterCoords = calculateNextCenterCoords(previousCenterCoords, currentRadius, n, time);
